@@ -25,7 +25,7 @@ public class TestNGToDo {
 	String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "yZCdsMi7xDqBRd4mvKJhv6XaoZp0MIeLgvA0eXaL2giSx2n8xG"
 			: System.getenv("LT_ACCESS_KEY");
 
-	public static WebDriver driver;
+		public static WebDriver driver;
 	public static String status = "failed";
 
 	@BeforeTest(alwaysRun=true)
@@ -43,10 +43,12 @@ public class TestNGToDo {
 		capabilities.setCapability("video", true);
 		capabilities.setCapability("console", true);
 		capabilities.setCapability("visual", true);
-		capabilities.setCapability("userFiles","C:\\Users\\ltuser\\Downloads\\jenkins.svg");
+		capabilities.setCapability("userFiles","jenkins.svg");
 		String gridURL = "http://" + username + ":" + accessKey + "@hub.lambdatest.com/wd/hub";
 		try {
 			driver = new RemoteWebDriver(new URL(gridURL), capabilities);
+		    ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
+
 		} catch (Exception e) {
 			System.out.println("driver error");
 			System.out.println(e.getMessage());
@@ -58,7 +60,7 @@ public class TestNGToDo {
 	public static void test() throws Exception {
 		try {
 			JavascriptExecutor js = (JavascriptExecutor) driver;
-
+			
 			driver.get("https://www.lambdatest.com/automation-demos/");
 
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
@@ -125,5 +127,4 @@ public class TestNGToDo {
 		((JavascriptExecutor) driver).executeScript("lambda-status=" + status + "");
 		driver.quit();
 	}
-
 }
