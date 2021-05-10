@@ -59,6 +59,9 @@ public class TestNGToDo {
 	@Test
 	public static void test() throws Exception {
 		try {
+			
+	                driver.setFileDetector(new LocalFileDetector());
+
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			
 			driver.get("https://www.lambdatest.com/automation-demos/");
@@ -73,7 +76,7 @@ public class TestNGToDo {
 
 			driver.findElement(By.xpath("//button[@class='applynow']")).click();
 
-			driver.findElement(By.id("developer-name")).sendKeys("qa.umang@gmai.com");
+			driver.findElement(By.id("developer-name")).sendKeys("utkarsh.qa@gmai.com");
 
 			driver.findElement(By.id("populate")).click();
 
