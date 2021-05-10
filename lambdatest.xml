@@ -19,13 +19,13 @@
       <class name="com.Meinbeck.TestCases.TestNGToDo"/>
     </classes>
   </test> <!-- Test -->
-<!--   <test name="MACTEST"> -->
-<!-- 	<parameter name="browser" value="safari" /> -->
-<!-- 	<parameter name="version" value="11.0" /> -->
-<!-- 	<parameter name="platform" value="macos 10.13" /> -->
-<!-- 	<classes> -->
-<!-- 		<class name="com.Meinbeck.TestCases.TestNGToDo" /> -->
-<!-- 	</classes> -->
-<!-- </test> Test -->
+   <test name="MACTEST">
+ 	<parameter name="browser" value="safari" />
+	<parameter name="version" value="11.0" />
+	<parameter name="platform" value="macos 10.13" />
+ 	<classes> -->
+		<class name="com.Meinbeck.TestCases.TestNGToDo" />
+	</classes> 
+</test> 
  
 </suite>
